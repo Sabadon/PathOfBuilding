@@ -13,6 +13,9 @@ launch = { }
 SetMainObject(launch)
 
 function launch:OnInit()
+	package.cpath = package.cpath .. ';C:/Users/Sabadon/AppData/Roaming/JetBrains/IntelliJIdea2020.2/plugins/intellij-emmylua/classes/debugger/emmy/windows/x86/?.dll'
+	local dbg = require('emmy_core')
+	dbg.tcpListen('localhost', 9966)
 	self.devMode = false
 	self.installedMode = false
 	self.versionNumber = "?"
